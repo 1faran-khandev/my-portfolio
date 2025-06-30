@@ -1,25 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { Typewriter } from 'react-simple-typewriter';
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center bg-white text-black dark:bg-black dark:text-white">
+    <section className="relative h-screen flex items-center justify-center bg-black text-white px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="w-full max-w-3xl bg-white/5 dark:bg-white/5 backdrop-blur-xl rounded-3xl shadow-lg border border-white/10 px-8 py-12 text-center"
+        className="w-full max-w-3xl text-center"
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-gray-900 dark:text-white drop-shadow-glow">
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
           Hi, I’m <span className="text-blue-500">Faran Khan</span>
         </h1>
 
-        <p className="text-gray-700 dark:text-gray-300 text-lg mb-8">
-          Front-End Developer | React, Tailwind, JavaScript | Building Responsive UIs | Exploring AI + OpenAI
-        </p>
+        <h2 className="text-xl md:text-2xl font-medium mb-6 text-gray-300">
+          <Typewriter
+            words={[
+              'Front-End Developer',
+              'React + Tailwind Specialist',
+              'Building Stunning UIs',
+              'Exploring AI + OpenAI',
+            ]}
+            loop={true}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </h2>
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4 mb-6">
           <a
             href="#projects"
             className="px-6 py-2 rounded-full bg-blue-600 hover:bg-blue-700 transition-all text-white font-semibold shadow-lg hover:shadow-blue-500/50"

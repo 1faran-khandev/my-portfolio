@@ -34,11 +34,12 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="text-lg leading-relaxed text-gray-200">
-              I'm <span className="font-semibold text-blue-400">Faran Khan</span>, a front-end developer passionate about building modern UIs using <strong>React</strong>, <strong>Tailwind CSS</strong>, and <strong>JavaScript</strong>.
+              I'm <span className="font-medium bold text-blue-600">Faran Khan</span>, a front-end developer passionate about crafting modern, responsive UIs using <span className="font-semibold text-blue-400">React</span>, <span className="font-semibold text-blue-400">Tailwind CSS</span>, and <span className="font-semi text-blue-400">JavaScript(ES6+)</span>.
             </p>
+            <p>I love turning ideas into clean, user-friendly web experiences that work beautifully across devices. I’ve built e-commerce sites, prompt-based tools, and personal websites that showcase both functionality and thoughtful design.</p>
             <p className="mt-4 text-lg leading-relaxed text-gray-300">
-              I love turning ideas into responsive, user-friendly websites. I'm also diving deep into the world of <strong className="text-purple-400">Artificial Intelligence</strong> and integrating AI tools into real-world projects.
-            </p>
+              Right now, I’m diving deeper into <span className="font-semibold text-blue-400">Artificial Intelligence</span>, learning how to integrate AI tools and APIs into real-world applications to create smarter, more interactive experiences.
+            </p><p>I’m always open to learning, collaborating, and building meaningful digital products that solve real problems.</p>
           </motion.div>
         </div>
 
