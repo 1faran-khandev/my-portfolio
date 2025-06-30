@@ -33,7 +33,7 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
         >
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/1faran-khandev"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-500 transition duration-300"
@@ -41,7 +41,7 @@ const Contact = () => {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/1farankhan"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-500 transition duration-300"
@@ -49,7 +49,7 @@ const Contact = () => {
             <FaLinkedin />
           </a>
           <a
-            href="mailto:youremail@example.com"
+            href="mailto:farankhan7067@gmail.com"
             className="hover:text-blue-500 transition duration-300"
           >
             <EnvelopeIcon className="h-7 w-7" />
