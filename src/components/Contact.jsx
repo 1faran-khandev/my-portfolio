@@ -5,48 +5,61 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-white text-gray-900">
+    <section id="contact" className="py-20 bg-black text-white">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <motion.h2
-          className="text-4xl font-bold mb-6"
-          initial={{ opacity: 0, y: 40 }}
+          className="text-4xl font-bold mb-4 text-blue-500"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
         >
-          Contact Me
+          Let’s Connect
         </motion.h2>
 
         <motion.p
-          className="text-lg text-gray-700 mb-10"
+          className="text-gray-400 text-lg mb-10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
         >
-          Want to work together or have a question? Feel free to reach out!
+          Have a project or idea in mind? Feel free to say hello.
         </motion.p>
 
-        {/* Social Icons */}
+        {/* Social Links */}
         <motion.div
-          className="flex justify-center gap-6 mb-12 text-3xl text-blue-600"
+          className="flex justify-center gap-6 mb-12 text-3xl"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
         >
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-            <FaGithub className="hover:text-black transition-colors duration-300" />
+          <a
+            href="https://github.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-500 transition duration-300"
+          >
+            <FaGithub />
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin className="hover:text-blue-800 transition-colors duration-300" />
+          <a
+            href="https://linkedin.com/in/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-500 transition duration-300"
+          >
+            <FaLinkedin />
           </a>
-          <a href="mailto:youremail@example.com">
-            <EnvelopeIcon className="h-7 w-7 hover:text-red-500 transition-colors duration-300" />
+          <a
+            href="mailto:youremail@example.com"
+            className="hover:text-blue-500 transition duration-300"
+          >
+            <EnvelopeIcon className="h-7 w-7" />
           </a>
         </motion.div>
 
         {/* Contact Form */}
         <motion.div
-          className="bg-gray-100 p-6 rounded-2xl shadow-md max-w-xl mx-auto"
-          initial={{ opacity: 0, y: 60 }}
+          className="bg-black border border-gray-800 p-6 rounded-2xl shadow-xl max-w-xl mx-auto"
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
@@ -60,25 +73,25 @@ const Contact = () => {
               name="name"
               placeholder="Your Name"
               required
-              className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="bg-black border border-gray-700 text-white placeholder-gray-500 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <input
               type="email"
               name="email"
               placeholder="Your Email"
               required
-              className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="bg-black border border-gray-700 text-white placeholder-gray-500 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <textarea
               name="message"
               rows="5"
               placeholder="Your Message"
               required
-              className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="bg-black border border-gray-700 text-white placeholder-gray-500 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
             <button
               type="submit"
-              className="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
+              className="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-blue-500/40"
             >
               Send Message
             </button>
