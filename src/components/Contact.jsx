@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { EnvelopeIcon } from '@heroicons/react/24/solid';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Contact = () => {
+  const [status, setStatus] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        setStatus('Thank you! Your message has been sent successfully.');
+        form.reset();
+      } else {
+        setStatus('Oops! Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setStatus('Oops! Something went wrong. Please try again.');
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-black text-white">
       <div className="max-w-4xl mx-auto px-6 text-center">
@@ -64,9 +91,10 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
         >
           <form
-            action="https://formspree.io/f/YOUR_FORM_ID"
+            action="https://formspree.io/f/mkgbdwde"
             method="POST"
             className="flex flex-col gap-4"
+            onSubmit={handleSubmit}
           >
             <input
               type="text"
@@ -96,6 +124,11 @@ const Contact = () => {
               Send Message
             </button>
           </form>
+
+          {/* Status Message */}
+          {status && (
+            <p className="mt-4 text-sm text-green-400">{status}</p>
+          )}
         </motion.div>
       </div>
     </section>

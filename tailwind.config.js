@@ -7,18 +7,15 @@ export default {
   theme: {
     extend: {
       dropShadow: {
-        glow: '0 0 10px rgba(59, 130, 246, 0.6)', // Blue glow effect
+        glow: '0 0 10px rgba(59, 130, 246, 0.6)', 
       },
       backdropBlur: {
-        xl: '20px', // Extra large blur
+        xl: '20px', 
       },
       colors: {
-        black: '#0e0e0e', // Custom black color
+        black: '#0e0e0e', 
       },
     },
   },
   plugins: [],
 }
-
-
-
