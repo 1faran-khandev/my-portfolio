@@ -3,7 +3,7 @@ Welcome to my personal developer Porfolio, a showcase of my porject, skills, and
 This portfolio is build with React and Tailwind CSS, Focusing on stunning UI/UX, smooth animations, and lightning fast performance.
 
 ##  Live Preview
-Check it out here : https://your-portfolio-link.vercel.app
+Check it out here : (https://farandev-portfolio.vercel.app/)
 
 ## Features 
 Beautiful, modern, responsive design.
