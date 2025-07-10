@@ -20,9 +20,9 @@ Skills: My technical tool kit
 Contact: Easy way to get in touch
 
 ## Tech stack
-React.js
-Tailwind CSS
-Framer motion 
-React simple typewriter
-Heroicons
+**React.js**
+**Tailwind CSS**
+**Framer motion**
+**React simple typewriter**
+**Heroicons**
 
