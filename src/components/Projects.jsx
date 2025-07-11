@@ -9,14 +9,14 @@ const projects = [
     description: 'A modern e-commerce site to sell hoodies with animations and full responsiveness.',
     link: 'https://1faran-khandev.github.io/Hoodie-website/',
     github: 'https://github.com/1faran-khandev/Hoodie-website',
-    image: '/public/images/hoodie.png', 
+    image: '/images/hoodie.png', 
   },
   {
     title: 'AI Prompt Tool',
     description: 'An AI-powered tool for generating high-quality prompts for ChatGPT and other models.',
     link: 'https://ai-prompt-tool-bay.vercel.app/',
     github: 'https://github.com/1faran-khandev/ai-prompt-tool',
-    image: '/public/images/prompt-tool.png',
+    image: '/images/prompt-tool.png',
   },
   {
     title: 'Weather App (In Progress)',
