@@ -7,20 +7,22 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-black text-white relative">
-      <div className="container mx-auto px-6 md:px-12 lg:px-20">
+    <section id="about" className="py-24 bg-black text-white relative">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
         {/* Heading */}
-        <h2 className="text-4xl font-bold text-center mb-16 text-blue-500">
-          About Me
+        <h2 className="text-4xl font-extrabold text-center mb-16">
+          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-md">
+            About Me
+          </span>
         </h2>
 
         {/* Image + Text */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Image */}
           <motion.img
             src={faranImage}
             alt="Faran Khan"
-            className="w-72 h-72 rounded-xl object-cover shadow-xl"
+            className="w-64 h-64 md:w-72 md:h-72 rounded-xl object-cover shadow-xl"
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -33,57 +35,61 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-lg leading-relaxed text-gray-200">
-              I'm <span className="font-medium bold text-blue-600">Faran Khan</span>, a front-end developer passionate about crafting modern, responsive UIs using <span className="font-semibold text-blue-400">React</span>, <span className="font-semibold text-blue-400">Tailwind CSS</span>, and <span className="font-semi text-blue-400">JavaScript(ES6+)</span>.
+            <p className="text-lg leading-relaxed text-gray-300 mb-4">
+              I’m{' '}
+              <span className="text-blue-500 font-semibold">
+                Faran Khan
+              </span>
+              , a front-end developer focused on building responsive, beautiful, and accessible UIs using{' '}
+              <span className="text-sky-400 font-medium">React</span>,{' '}
+              <span className="text-cyan-400 font-medium">Tailwind CSS</span>, and{' '}
+              <span className="text-yellow-400 font-medium">JavaScript (ES6+)</span>.
             </p>
-            <p>I love turning ideas into clean, user-friendly web experiences that work beautifully across devices. I’ve built e-commerce sites, prompt-based tools, and personal websites that showcase both functionality and thoughtful design.</p>
-            <p className="mt-4 text-lg leading-relaxed text-gray-300">
-              Right now, I’m diving deeper into <span className="font-semibold text-blue-400">Artificial Intelligence</span>, learning how to integrate AI tools and APIs into real-world applications to create smarter, more interactive experiences.
-            </p><p>I’m always open to learning, collaborating, and building meaningful digital products that solve real problems.</p>
+            <p className="text-base text-gray-400 mb-4">
+              I love transforming ideas into clean and user-friendly digital experiences. From e-commerce stores to AI tools, I build with performance and elegance in mind.
+            </p>
+            <p className="text-base text-gray-400">
+              Currently, I’m exploring the power of{' '}
+              <span className="text-purple-400 font-medium">AI and OpenAI APIs</span> to create smarter, more interactive web applications. I'm always open to learning, collaborating, and solving real-world problems through code.
+            </p>
           </motion.div>
         </div>
 
-        {/* Skills / Tech Stack */}
-        <div className="mt-16">
-          <h3 className="text-2xl font-semibold text-center mb-8 text-white">
-            Tech Stack I Love 
+        {/* Tech Stack */}
+        <div className="mt-20">
+          <h3 className="text-2xl font-semibold text-center mb-10 text-white">
+            Tech Stack I Love
           </h3>
 
           <motion.div
-            className="flex flex-wrap justify-center gap-6"
+            className="flex flex-wrap justify-center gap-10"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: 1 }}
           >
-            <div className="flex flex-col items-center gap-2">
-              <FaReact className="text-5xl text-blue-500 drop-shadow-glow" />
-              <p className="text-sm font-medium">React</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <SiTailwindcss className="text-5xl text-teal-400 drop-shadow-glow" />
-              <p className="text-sm font-medium">Tailwind</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <FaJs className="text-5xl text-yellow-400 drop-shadow-glow" />
-              <p className="text-sm font-medium">JavaScript</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <FaHtml5 className="text-5xl text-orange-500 drop-shadow-glow" />
-              <p className="text-sm font-medium">HTML</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <FaCss3Alt className="text-5xl text-blue-300 drop-shadow-glow" />
-              <p className="text-sm font-medium">CSS</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <FaBrain className="text-5xl text-purple-400 drop-shadow-glow" />
-              <p className="text-sm font-medium">AI / OpenAI</p>
-            </div>
+            {[ 
+              { icon: <FaReact className="text-blue-500" />, name: 'React' },
+              { icon: <SiTailwindcss className="text-cyan-400" />, name: 'Tailwind CSS' },
+              { icon: <FaJs className="text-yellow-400" />, name: 'JavaScript' },
+              { icon: <FaHtml5 className="text-orange-500" />, name: 'HTML5' },
+              { icon: <FaCss3Alt className="text-blue-300" />, name: 'CSS3' },
+              { icon: <FaBrain className="text-purple-400" />, name: 'AI / OpenAI' },
+            ].map((tech, i) => (
+              <motion.div
+                key={i}
+                className="flex flex-col items-center gap-2 hover:scale-110 transition-transform duration-300"
+              >
+                <div className="text-5xl drop-shadow-[0_0_12px_rgba(59,130,246,0.4)]">
+                  {tech.icon}
+                </div>
+                <p className="text-sm font-medium text-gray-300">{tech.name}</p>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </div>
 
-      {/* Scroll-down Arrow */}
+      {/* Scroll-down arrow */}
       <motion.a
         href="#projects"
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
@@ -100,7 +106,7 @@ const About = () => {
           }}
           transition={{ repeat: Infinity, duration: 2 }}
         >
-          <ChevronDownIcon className="w-8 h-8 text-blue-500 drop-shadow-[0_0_10px_#3b82f6]" />
+          <ChevronDownIcon className="w-8 h-8 text-blue-500 drop-shadow-md" />
         </motion.div>
       </motion.a>
     </section>

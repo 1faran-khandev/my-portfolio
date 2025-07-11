@@ -12,11 +12,20 @@ const Hero = () => {
         transition={{ duration: 0.8 }}
         className="w-full max-w-3xl text-center"
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-          Hi, I’m <span className="text-blue-500">Faran Khan</span>
+        {/* Heading */}
+        <h1
+          role="heading"
+          aria-level="1"
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4"
+        >
+          Hi, I’m{' '}
+          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-md">
+            Faran Khan
+          </span>
         </h1>
 
-        <h2 className="text-xl md:text-2xl font-medium mb-6 text-gray-300">
+        {/* Typewriter Role Titles */}
+        <h2 className="text-lg md:text-2xl font-medium mb-4 text-gray-300">
           <Typewriter
             words={[
               'Front-End Developer',
@@ -33,10 +42,16 @@ const Hero = () => {
           />
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-6">
+        {/* Optional Summary */}
+        <p className="text-gray-400 max-w-xl mx-auto mb-6 text-sm md:text-base">
+          I build responsive, fast, and modern websites using cutting-edge tech like React, Tailwind CSS, and AI tools. Let’s collaborate and create something impactful.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-wrap justify-center gap-4">
           <a
             href="#projects"
-            className="px-6 py-2 rounded-full bg-blue-600 hover:bg-blue-700 transition-all text-white font-semibold shadow-lg hover:shadow-blue-500/50"
+            className="px-6 py-2 rounded-full bg-blue-600 hover:bg-blue-700 transition-all text-white font-semibold shadow-md hover:shadow-blue-500/50"
           >
             See My Work
           </a>
@@ -56,8 +71,9 @@ const Hero = () => {
         initial={{ y: 0 }}
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 1.5 }}
+        whileHover={{ scale: 1.2 }}
       >
-        <ChevronDownIcon className="w-8 h-8 text-blue-500 drop-shadow-glow" />
+        <ChevronDownIcon className="w-8 h-8 text-blue-500 drop-shadow-md" />
       </motion.a>
     </section>
   );

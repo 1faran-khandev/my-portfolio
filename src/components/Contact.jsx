@@ -15,25 +15,24 @@ const Contact = () => {
       const response = await fetch(form.action, {
         method: 'POST',
         body: data,
-        headers: {
-          Accept: 'application/json',
-        },
+        headers: { Accept: 'application/json' },
       });
 
       if (response.ok) {
-        setStatus('Thank you! Your message has been sent successfully.');
+        setStatus('✅ Message sent successfully!');
         form.reset();
       } else {
-        setStatus('Oops! Something went wrong. Please try again.');
+        setStatus('❌ Something went wrong. Try again.');
       }
     } catch (error) {
-      setStatus('Oops! Something went wrong. Please try again.');
+      setStatus('❌ Network error. Please try again.');
     }
   };
 
   return (
-    <section id="contact" className="py-20 bg-black text-white">
+    <section id="contact" className="py-24 bg-black text-white">
       <div className="max-w-4xl mx-auto px-6 text-center">
+        {/* Heading */}
         <motion.h2
           className="text-4xl font-bold mb-4 text-blue-500"
           initial={{ opacity: 0, y: 30 }}
@@ -49,7 +48,7 @@ const Contact = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          Have a project or idea in mind? Feel free to say hello.
+          Have a project or idea in mind? Let’s build something awesome together.
         </motion.p>
 
         {/* Social Links */}
@@ -63,6 +62,7 @@ const Contact = () => {
             href="https://github.com/1faran-khandev"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
             className="hover:text-blue-500 transition duration-300"
           >
             <FaGithub />
@@ -71,12 +71,14 @@ const Contact = () => {
             href="https://linkedin.com/in/1farankhan"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
             className="hover:text-blue-500 transition duration-300"
           >
             <FaLinkedin />
           </a>
           <a
             href="mailto:farankhan7067@gmail.com"
+            aria-label="Email"
             className="hover:text-blue-500 transition duration-300"
           >
             <EnvelopeIcon className="h-7 w-7" />
@@ -85,7 +87,7 @@ const Contact = () => {
 
         {/* Contact Form */}
         <motion.div
-          className="bg-black border border-gray-800 p-6 rounded-2xl shadow-xl max-w-xl mx-auto"
+          className="bg-black border border-gray-800 p-6 md:p-8 rounded-2xl shadow-xl max-w-xl mx-auto"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -93,8 +95,8 @@ const Contact = () => {
           <form
             action="https://formspree.io/f/mkgbdwde"
             method="POST"
-            className="flex flex-col gap-4"
             onSubmit={handleSubmit}
+            className="flex flex-col gap-4"
           >
             <input
               type="text"
@@ -119,15 +121,23 @@ const Contact = () => {
             ></textarea>
             <button
               type="submit"
-              className="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-blue-500/40"
+              className="bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-blue-500/40 font-semibold"
             >
               Send Message
             </button>
           </form>
 
-          {/* Status Message */}
+          {/* Status message */}
           {status && (
-            <p className="mt-4 text-sm text-green-400">{status}</p>
+            <motion.p
+              className={`mt-4 text-sm font-medium ${
+                status.includes('✅') ? 'text-green-400' : 'text-red-400'
+              }`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              {status}
+            </motion.p>
           )}
         </motion.div>
       </div>
