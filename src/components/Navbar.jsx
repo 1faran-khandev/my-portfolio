@@ -14,21 +14,22 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = links.map((link) =>
-        document.getElementById(link.toLowerCase())
-      );
+      for (let i = 0; i < links.length; i++) {
+        const section = document.getElementById(links[i].toLowerCase());
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          const middle = window.innerHeight / 2;
 
-      const scrollY = window.scrollY + window.innerHeight / 2;
-
-      for (let i = 0; i < sections.length; i++) {
-        const section = sections[i];
-        if (section && scrollY >= section.offsetTop) {
-          setActiveLink(links[i]);
+          if (rect.top <= middle && rect.bottom >= middle) {
+            setActiveLink(links[i]);
+            break;
+          }
         }
       }
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // initial check
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -72,7 +73,6 @@ const Navbar = () => {
                   href={`#${link.toLowerCase()}`}
                   className="group relative inline-block cursor-pointer transition-colors duration-300"
                 >
-                  {/* Link Text */}
                   <span
                     className={`relative z-10 transition-colors duration-300 ${
                       isActive
@@ -83,7 +83,6 @@ const Navbar = () => {
                     {link}
                   </span>
 
-                  {/* Underline */}
                   <span
                     className={`absolute left-0 -bottom-1 h-[2px] rounded-full transition-all duration-300 ${
                       isActive
