@@ -1,40 +1,79 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 const links = ['About', 'Projects', 'Skills', 'Contact'];
 
 const MobileMenu = ({ setMenuOpen }) => {
+  const menuRef = useRef();
+  const firstLinkRef = useRef(null);
+
+  // Close on ESC key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    };
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [setMenuOpen]);
+
+  // Close if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [setMenuOpen]);
+
+  // Auto focus first link
+  useEffect(() => {
+    firstLinkRef.current?.focus();
+  }, []);
+
   return (
     <motion.div
-      className="fixed top-0 left-0 w-full h-screen z-40 flex flex-col items-center justify-center space-y-12 text-white bg-gradient-to-br from-black/90 via-gray-900/90 to-black/90 backdrop-blur-lg"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.6, ease: 'easeInOut' }}
+      className="fixed top-0 left-0 w-full h-screen z-50 bg-black/90 backdrop-blur-lg"
+      initial={{ x: '100%' }}
+      animate={{ x: 0 }}
+      exit={{ x: '100%', opacity: 0 }}
+      transition={{ type: 'spring', stiffness: 100, damping: 20 }}
+      aria-label="Mobile navigation"
     >
-      <div className="relative z-10 flex flex-col items-center space-y-12">
+      {/* Close Button */}
+      <button
+        aria-label="Close menu"
+        className="absolute top-5 right-6 text-white"
+        onClick={() => setMenuOpen(false)}
+      >
+        <XMarkIcon className="h-8 w-8" />
+      </button>
+
+      {/* Nav Links */}
+      <div
+        ref={menuRef}
+        className="h-full flex flex-col justify-center items-center space-y-12 text-white"
+      >
         {links.map((link, i) => (
           <motion.a
             key={link}
             href={`#${link.toLowerCase()}`}
             onClick={() => setMenuOpen(false)}
-            initial={{ opacity: 0, scale: 0.8, y: -20 }}
+            ref={i === 0 ? firstLinkRef : null}
+            initial={{ opacity: 0, scale: 0.8, y: -10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: -20 }}
+            exit={{ opacity: 0, scale: 0.8, y: -10 }}
             transition={{
               type: 'spring',
               stiffness: 200,
-              damping: 20,
-              delay: i * 0.1,
+              damping: 18,
+              delay: i * 0.08,
             }}
-            whileHover={{
-              scale: 1.1,
-              x: 10,
-              color: '#3b82f6',
-            }}
-            className="text-3xl font-bold transition-all duration-300 cursor-pointer relative"
+            className="text-3xl font-extrabold cursor-pointer relative focus:outline-none"
           >
-            <span className="relative z-10 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text hover:from-blue-400 hover:via-purple-400 hover:to-blue-400 transition-all duration-300">
+            <span className="relative z-10 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent hover:from-blue-400 hover:via-purple-400 hover:to-blue-400 transition-all duration-300">
               {link}
             </span>
           </motion.a>

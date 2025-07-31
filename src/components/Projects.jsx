@@ -2,27 +2,39 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub } from 'react-icons/fa';
 
-// Project Data with Images
+// Project Data
 const projects = [
   {
-    title: 'Hoodie Website',
-    description: 'A modern e-commerce site to sell hoodies with animations and full responsiveness.',
-    link: 'https://1faran-khandev.github.io/Hoodie-website/',
-    github: 'https://github.com/1faran-khandev/Hoodie-website',
-    image: '/images/hoodie.png', 
+    title: 'Hoodify – Hoodie eCommerce',
+    description:
+      'A modern hoodie eCommerce store built with React and Tailwind CSS. Features animated hero, add-to-cart UI, and responsive design.',
+    link: 'https://hoodify-eight.vercel.app/',
+    github: 'https://github.com/1faran-khandev/hoodify',
+    image: '/images/hoodify.png',
   },
   {
     title: 'AI Prompt Tool',
-    description: 'An AI-powered tool for generating high-quality prompts for ChatGPT and other models.',
+    description:
+      'Tool built using Cohere + React to generate optimized prompts for AI use cases.',
     link: 'https://ai-prompt-tool-bay.vercel.app/',
     github: 'https://github.com/1faran-khandev/ai-prompt-tool',
     image: '/images/prompt-tool.png',
   },
   {
+    title: 'BrickSpace – Real Estate Web App',
+    description:
+      'A responsive real estate platform where users can explore and filter properties. Built with React and Tailwind CSS.',
+    link: 'https://brickspace-real-estate.vercel.app/',
+    github: 'https://github.com/1faran-khandev/brickspace-real-estate',
+    image: '/images/brickspace.png',
+  },
+  {
     title: 'Weather App (In Progress)',
-    description: 'A React-based weather app using OpenWeather API. Still in development.',
+    description:
+      'A React-based weather app using OpenWeather API with animated icons and live search. Still in development.',
     link: '',
     github: '',
+    image: '', // No image yet
   },
 ];
 
@@ -47,10 +59,10 @@ const card = {
 const Projects = () => {
   return (
     <section id="projects" className="py-24 bg-black text-white">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <h2 className="text-4xl font-bold text-center mb-16 text-blue-500">
-          My Projects
+           My Projects
         </h2>
 
         {/* Project Grid */}
@@ -68,17 +80,21 @@ const Projects = () => {
               whileHover={{ scale: 1.03 }}
               className="group flex flex-col bg-white/5 border border-white/10 rounded-2xl overflow-hidden transition-all hover:shadow-[0_0_20px_#3b82f6]"
             >
-              {/* Project Image */}
-              {project.image && (
+              {/* Project Image or Placeholder */}
+              {project.image ? (
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-48 object-cover"
                 />
+              ) : (
+                <div className="w-full h-48 bg-gray-700 text-center flex items-center justify-center text-gray-400 italic">
+                  No Image Available
+                </div>
               )}
 
               {/* Text Content */}
-              <div className="p-6 flex flex-col justify-between h-full">
+              <div className="p-6 flex flex-col justify-between min-h-[220px]">
                 <div>
                   <h3 className="text-xl font-semibold text-blue-400 mb-2">
                     {project.title}
@@ -89,7 +105,7 @@ const Projects = () => {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex gap-3 mt-auto">
+                <div className="flex gap-3 mt-auto flex-wrap">
                   {project.link ? (
                     <a
                       href={project.link}
