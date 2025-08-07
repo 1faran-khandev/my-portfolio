@@ -76,14 +76,6 @@ const Hero = () => {
           >
             Let’s Talk
           </a>
-          <a
-            href="/Faran_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2 rounded-full border border-white text-white hover:bg-white hover:text-black transition-all font-semibold shadow-md"
-          >
-            View Resume
-          </a>
         </div>
       </motion.div>
 
