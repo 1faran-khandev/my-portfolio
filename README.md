@@ -23,7 +23,7 @@ A personal portfolio built to showcase my projects, technical skills, and approa
 | **About** | A brief look at who I am and what drives me |
 | **Projects** | A curated selection of my best work |
 | **Skills** | My technical toolkit at a glance |
-| **Contact** | Get in touch — straightforward and easy |
+| **Contact** | Get in touch, straightforward and easy |
 
 ---
 
