@@ -1,4 +1,4 @@
-# Faran Khan — Developer Portfolio
+# Faran Khan : Developer Portfolio
 
 A personal portfolio built to showcase my projects, technical skills, and approach to modern web development. Designed with a focus on clean UI/UX, fluid animations, and performance.
 
