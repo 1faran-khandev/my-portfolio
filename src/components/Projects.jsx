@@ -13,28 +13,28 @@ const projects = [
     image: '/images/hoodify.png',
   },
   {
+    title: 'BrickSpace – Real Estate Web App',
+    description:
+      'A responsive real estate platform where users can explore, filter, and view property listings. Built with React and Tailwind CSS.',
+    link: 'https://brickspace-real-estate.vercel.app/',
+    github: 'https://github.com/1faran-khandev/brickspace-real-estate',
+    image: '/images/brickspace.png',
+  },
+  {
+    title: 'Crypto Dashboard',
+    description:
+      'A real-time crypto dashboard showing live market data, charts, and coin tracking UI built with React.',
+    link: 'https://crypto-dashboard-green-seven.vercel.app/',
+    github: 'https://github.com/1faran-khandev/crypto-dashboard',
+    image: '/images/crypto-dashboard.png',
+  },
+  {
     title: 'AI Prompt Tool',
     description:
       'Tool built using Cohere + React to generate optimized prompts for AI use cases.',
     link: 'https://ai-prompt-tool-bay.vercel.app/',
     github: 'https://github.com/1faran-khandev/ai-prompt-tool',
     image: '/images/prompt-tool.png',
-  },
-  {
-    title: 'BrickSpace – Real Estate Web App',
-    description:
-      'A responsive real estate platform where users can explore and filter properties. Built with React and Tailwind CSS.',
-    link: 'https://brickspace-real-estate.vercel.app/',
-    github: 'https://github.com/1faran-khandev/brickspace-real-estate',
-    image: '/images/brickspace.png',
-  },
-  {
-    title: 'Weather App (In Progress)',
-    description:
-      'A React-based weather app using OpenWeather API with animated icons and live search. Still in development.',
-    link: '',
-    github: '',
-    image: '', // No image yet
   },
 ];
 
