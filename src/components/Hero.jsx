@@ -1,95 +1,82 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import { Typewriter } from 'react-simple-typewriter';
+import React from "react";
+import { motion } from "framer-motion";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 const Hero = () => {
   return (
     <section
       id="home"
-      className="relative h-screen flex items-center justify-center bg-black text-white px-4 overflow-hidden"
-      role="banner"
-      aria-label="Hero Section"
+      className="relative min-h-screen flex items-center justify-center bg-[#0a0a0a] text-white px-6 overflow-hidden"
     >
-      {/* Glow Background */}
-      <motion.div
-        className="absolute w-[600px] h-[600px] rounded-full bg-blue-500/10 blur-[120px] top-[-150px] left-[-150px] z-0"
-        animate={{ scale: [1, 1.1, 1] }}
-        transition={{ duration: 16, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full bg-purple-500/10 blur-[100px] bottom-[-150px] right-[-150px] z-0"
-        animate={{ scale: [1, 1.15, 1] }}
-        transition={{ duration: 18, repeat: Infinity }}
-      />
+      {/* Subtle gradient background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#1f2937,transparent_60%)] opacity-60" />
+
+      {/* Soft grid overlay (modern SaaS feel) */}
+      <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
 
       {/* Main Content */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="w-full max-w-3xl text-center relative z-10"
+        transition={{ duration: 0.6 }}
+        className="relative z-10 max-w-3xl text-center"
       >
-        <h1
-          role="heading"
-          aria-level="1"
-          className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4"
-        >
-          Hi, I’m{' '}
-          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-md">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-gray-700 text-gray-400 text-sm mb-6">
+          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+          Available for Freelance Work
+        </div>
+
+        {/* Name */}
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+          Hi, I’m{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
             Faran Khan
           </span>
         </h1>
 
-        <h2 className="text-lg md:text-2xl font-medium mb-4 text-gray-300">
-          <Typewriter
-            words={[
-              'Front-End Developer',
-              'React + Tailwind Specialist',
-              'Building Stunning UIs',
-              'Exploring AI + OpenAI',
-            ]}
-            loop={true}
-            cursor
-            cursorStyle="|"
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
-          />
-        </h2>
+        {/* Role */}
+        <p className="mt-4 text-lg md:text-xl text-gray-400">
+          Frontend Developer focused on building clean, fast & modern web experiences
+          using React and Tailwind CSS.
+        </p>
 
-        <p className="text-gray-400 max-w-xl mx-auto mb-6 text-sm md:text-base">
-          I craft responsive, fast, and modern web interfaces using tools like React, Tailwind CSS, and AI APIs. Let's build something amazing together.
+        {/* Skills line */}
+        <p className="mt-3 text-sm text-gray-500">
+          React • Tailwind • UI Engineering • Basic AI Integration
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#projects"
-            className="px-6 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all text-white font-semibold shadow-md hover:shadow-blue-500/50"
+            className="px-6 py-3 rounded-xl bg-white text-black font-medium hover:bg-gray-200 transition-all"
           >
-            See My Work
+            View Projects
           </a>
+
           <a
             href="#contact"
-            className="px-6 py-2 rounded-full border border-blue-500 text-blue-500 hover:bg-blue-600 hover:text-white transition-all font-semibold shadow-md hover:shadow-blue-500/50"
+            className="px-6 py-3 rounded-xl border border-gray-600 text-gray-300 hover:border-white hover:text-white transition-all"
           >
-            Let’s Talk
+            Contact Me
           </a>
         </div>
+
+        {/* Social proof / small note */}
+        <p className="mt-6 text-xs text-gray-600">
+          I build responsive UI, landing pages, and React apps for modern businesses.
+        </p>
       </motion.div>
 
-      {/* Scroll Down Arrow */}
+      {/* Scroll indicator */}
       <motion.a
         href="#about"
-        className="absolute bottom-8 text-white z-10"
-        initial={{ y: 0 }}
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
-        whileHover={{ scale: 1.2 }}
-        aria-label="Scroll to About section"
+        className="absolute bottom-6 text-gray-400 hover:text-white transition"
+        animate={{ y: [0, 6, 0] }}
+        transition={{ repeat: Infinity, duration: 1.8 }}
       >
-        <ChevronDownIcon className="w-8 h-8 text-blue-500 drop-shadow-md" />
+        <ChevronDownIcon className="w-6 h-6" />
       </motion.a>
     </section>
   );

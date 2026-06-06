@@ -1,122 +1,122 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FaGithub } from 'react-icons/fa';
+import React from "react";
+import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
 
-// Project Data
 const projects = [
   {
-    title: 'Hoodify – Hoodie eCommerce',
+    title: "Hoodify – Hoodie eCommerce",
     description:
-      'A modern hoodie eCommerce store built with React and Tailwind CSS. Features animated hero, add-to-cart UI, and responsive design.',
-    link: 'https://hoodify-eight.vercel.app/',
-    github: 'https://github.com/1faran-khandev/hoodify',
-    image: '/images/hoodify.png',
+      "Modern eCommerce UI built with React + Tailwind. Focused on clean UX, cart flow, and responsive design.",
+    link: "https://hoodify-eight.vercel.app/",
+    github: "https://github.com/1faran-khandev/hoodify",
+    image: "/images/hoodify.png",
   },
   {
-    title: 'BrickSpace – Real Estate Web App',
+    title: "BrickSpace – Real Estate Platform",
     description:
-      'A responsive real estate platform where users can explore, filter, and view property listings. Built with React and Tailwind CSS.',
-    link: 'https://brickspace-real-estate.vercel.app/',
-    github: 'https://github.com/1faran-khandev/brickspace-real-estate',
-    image: '/images/brickspace.png',
+      "Real estate listing UI with filtering system and responsive property browsing experience.",
+    link: "https://brickspace-real-estate.vercel.app/",
+    github: "https://github.com/1faran-khandev/brickspace-real-estate",
+    image: "/images/brickspace.png",
   },
   {
-    title: 'Crypto Dashboard',
+    title: "Crypto Dashboard",
     description:
-      'A real-time crypto dashboard showing live market data, charts, and coin tracking UI built with React.',
-    link: 'https://crypto-dashboard-green-seven.vercel.app/',
-    github: 'https://github.com/1faran-khandev/crypto-dashboard',
-    image: '/images/crypto-dashboard.png',
+      "Live crypto tracking dashboard with real-time data UI and clean analytics layout.",
+    link: "https://crypto-dashboard-green-seven.vercel.app/",
+    github: "https://github.com/1faran-khandev/crypto-dashboard",
+    image: "/images/crypto-dashboard.png",
   },
   {
-    title: 'AI Prompt Tool',
+    title: "AI Prompt Tool",
     description:
-      'Tool built using Cohere + React to generate optimized prompts for AI use cases.',
-    link: 'https://ai-prompt-tool-bay.vercel.app/',
-    github: 'https://github.com/1faran-khandev/ai-prompt-tool',
-    image: '/images/prompt-tool.png',
+      "AI-powered prompt generator built with React + API integration for better AI outputs.",
+    link: "https://ai-prompt-tool-bay.vercel.app/",
+    github: "https://github.com/1faran-khandev/ai-prompt-tool",
+    image: "/images/prompt-tool.png",
   },
 ];
 
-// Animation Variants
 const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.2 },
+    transition: { staggerChildren: 0.15 },
   },
 };
 
 const card = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6 },
+    transition: { duration: 0.5 },
   },
 };
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 bg-black text-white">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Heading */}
-        <h2 className="text-4xl font-bold text-center mb-16 text-blue-500">
-           My Projects
-        </h2>
+    <section id="projects" className="py-28 bg-[#0a0a0a] text-white">
+      <div className="max-w-6xl mx-auto px-6">
 
-        {/* Project Grid */}
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold">
+            Featured{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+              Projects
+            </span>
+          </h2>
+
+          <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm md:text-base">
+            A selection of projects focused on UI design, performance, and real-world usability.
+          </p>
+        </div>
+
+        {/* Grid */}
         <motion.div
-          className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-10 sm:grid-cols-2"
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true }}
         >
           {projects.map((project, index) => (
             <motion.div
               key={index}
               variants={card}
-              whileHover={{ scale: 1.03 }}
-              className="group flex flex-col bg-white/5 border border-white/10 rounded-2xl overflow-hidden transition-all hover:shadow-[0_0_20px_#3b82f6]"
+              className="group rounded-2xl overflow-hidden border border-gray-800 bg-white/5 hover:bg-white/10 transition"
             >
-              {/* Project Image or Placeholder */}
-              {project.image ? (
+              {/* Image */}
+              <div className="h-52 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                 />
-              ) : (
-                <div className="w-full h-48 bg-gray-700 text-center flex items-center justify-center text-gray-400 italic">
-                  No Image Available
-                </div>
-              )}
+              </div>
 
-              {/* Text Content */}
-              <div className="p-6 flex flex-col justify-between min-h-[220px]">
-                <div>
-                  <h3 className="text-xl font-semibold text-blue-400 mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-gray-300 mb-4">
-                    {project.description}
-                  </p>
-                </div>
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white">
+                  {project.title}
+                </h3>
 
-                {/* Buttons */}
-                <div className="flex gap-3 mt-auto flex-wrap">
-                  {project.link ? (
+                <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+                  {project.description}
+                </p>
+
+                {/* Actions */}
+                <div className="flex items-center gap-3 mt-6">
+                  {project.link && (
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-1.5 text-sm bg-blue-600 hover:bg-blue-700 text-white rounded-full"
+                      className="px-4 py-2 text-sm rounded-lg bg-white text-black font-medium hover:bg-gray-200 transition"
                     >
-                      Visit Site
+                      Live Demo
                     </a>
-                  ) : (
-                    <span className="text-gray-500 italic">Coming Soon</span>
                   )}
 
                   {project.github && (
@@ -124,9 +124,9 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-1.5 text-sm border border-gray-500 text-gray-300 hover:text-white hover:border-white rounded-full"
+                      className="flex items-center gap-2 px-4 py-2 text-sm rounded-lg border border-gray-700 text-gray-300 hover:border-white hover:text-white transition"
                     >
-                      <FaGithub className="w-4 h-4" />
+                      <FaGithub />
                       Code
                     </a>
                   )}
