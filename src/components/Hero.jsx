@@ -24,12 +24,12 @@ const Hero = () => {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-gray-700 text-gray-400 text-sm mb-6">
           <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          Available for Freelance Work
+          Open to Frontend & AI Engineering Opportunities
         </div>
 
         {/* Name */}
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
-          Hi, I’m{" "}
+          Hi, I'm{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
             Faran Khan
           </span>
@@ -37,13 +37,13 @@ const Hero = () => {
 
         {/* Role */}
         <p className="mt-4 text-lg md:text-xl text-gray-400">
-          Frontend Developer focused on building clean, fast & modern web experiences
-          using React and Tailwind CSS.
+          Frontend Engineer specializing in React.js, Next.js, TypeScript, and
+          Tailwind CSS.
         </p>
 
         {/* Skills line */}
         <p className="mt-3 text-sm text-gray-500">
-          React • Tailwind • UI Engineering • Basic AI Integration
+          React.js • Next.js • TypeScript • Tailwind CSS • REST APIs • AI Integration
         </p>
 
         {/* CTA Buttons */}
@@ -52,20 +52,20 @@ const Hero = () => {
             href="#projects"
             className="px-6 py-3 rounded-xl bg-white text-black font-medium hover:bg-gray-200 transition-all"
           >
-            View Projects
+            View My Work
           </a>
 
           <a
             href="#contact"
             className="px-6 py-3 rounded-xl border border-gray-600 text-gray-300 hover:border-white hover:text-white transition-all"
           >
-            Contact Me
+            Let's Connect
           </a>
         </div>
 
         {/* Social proof / small note */}
         <p className="mt-6 text-xs text-gray-600">
-          I build responsive UI, landing pages, and React apps for modern businesses.
+          Building responsive web applications, AI-powered interfaces, and modern user experiences.
         </p>
       </motion.div>
 

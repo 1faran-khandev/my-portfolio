@@ -28,7 +28,8 @@ const About = () => {
           </h2>
 
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm md:text-base">
-            A quick introduction about who I am, what I build, and what I’m learning.
+            Learn more about my background, technical skills, and passion for
+            building modern web applications.
           </p>
         </motion.div>
 
@@ -60,17 +61,31 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <p className="text-gray-300 leading-relaxed">
-              I’m <span className="text-white font-semibold">Faran Khan</span>,
-              a frontend developer focused on building modern, fast, and responsive web interfaces.
+              I'm{" "}
+              <span className="text-white font-semibold">
+                Muhammad Faran Ullah Khan
+              </span>
+              , a Frontend Engineer specializing in React.js, Next.js,
+              TypeScript, and Tailwind CSS. I enjoy building fast, responsive,
+              and scalable web applications with clean, reusable UI components.
             </p>
 
             <p className="mt-4 text-gray-400 leading-relaxed">
-              I enjoy turning ideas into real products using React and Tailwind CSS. My focus is clean UI, performance, and user experience, not just “pretty design”.
+              Through hands-on projects, I've built dashboard applications,
+              e-commerce interfaces, and AI-powered web applications by
+              integrating REST APIs and modern frontend technologies. My focus
+              is on performance, accessibility, and delivering a great user
+              experience.
             </p>
 
             <p className="mt-4 text-gray-400 leading-relaxed">
-              Currently exploring{" "}
-              <span className="text-purple-400">AI integrations</span> and building smarter web apps using APIs and automation tools.
+              I'm currently expanding my skills in{" "}
+              <span className="text-purple-400">
+                Node.js, PostgreSQL, Supabase, authentication systems, and AI
+                integration
+              </span>{" "}
+              while continuing to grow as a frontend engineer and future
+              full-stack developer.
             </p>
           </motion.div>
         </div>
