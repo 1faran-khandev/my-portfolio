@@ -9,7 +9,7 @@ const About = () => {
       id="about"
       className="relative py-28 bg-[#0a0a0a] text-white overflow-hidden"
     >
-      {/* subtle background */}
+      {/* Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#1f2937,transparent_60%)] opacity-60" />
 
       <div className="relative max-w-6xl mx-auto px-6 md:px-12">
@@ -28,8 +28,8 @@ const About = () => {
           </h2>
 
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm md:text-base">
-            Learn more about my background, technical skills, and passion for
-            building modern web applications.
+            Frontend developer with experience building responsive web
+            applications, integrating APIs, and creating modern user interfaces.
           </p>
         </motion.div>
 
@@ -45,11 +45,11 @@ const About = () => {
             <div className="relative">
               <img
                 src={faranImage}
-                alt="Faran Khan"
+                alt="Muhammad Faran Ullah Khan"
                 className="w-72 h-72 object-cover rounded-2xl shadow-2xl border border-gray-800"
               />
 
-              {/* subtle glow */}
+              {/* Glow Effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-blue-500/10 to-purple-500/10 blur-xl -z-10" />
             </div>
           </motion.div>
@@ -65,33 +65,31 @@ const About = () => {
               <span className="text-white font-semibold">
                 Muhammad Faran Ullah Khan
               </span>
-              , a Frontend Engineer specializing in React.js, Next.js,
-              TypeScript, and Tailwind CSS. I enjoy building fast, responsive,
-              and scalable web applications with clean, reusable UI components.
+              , a software developer specializing in React, Next.js,
+              TypeScript, JavaScript, and Tailwind CSS. I enjoy building
+              responsive, accessible, and high-performance web applications with
+              clean, maintainable code.
             </p>
 
             <p className="mt-4 text-gray-400 leading-relaxed">
-              Through hands-on projects, I've built dashboard applications,
-              e-commerce interfaces, and AI-powered web applications by
-              integrating REST APIs and modern frontend technologies. My focus
-              is on performance, accessibility, and delivering a great user
-              experience.
+              I've built projects including AI-powered applications,
+              e-commerce platforms, dashboards, and real estate websites.
+              My experience includes integrating REST APIs, managing application
+              state, creating reusable UI components, and delivering consistent
+              user experiences across desktop and mobile devices.
             </p>
 
             <p className="mt-4 text-gray-400 leading-relaxed">
-              I'm currently expanding my skills in{" "}
-              <span className="text-purple-400">
-                Node.js, PostgreSQL, Supabase, authentication systems, and AI
-                integration
-              </span>{" "}
-              while continuing to grow as a frontend engineer and future
-              full-stack developer.
+              In addition to frontend development, I have experience with
+              Python, Node.js, Express.js, and REST APIs. I'm interested in AI
+              integration, scalable web applications, and continuously improving
+              my skills by building practical, real-world software projects.
             </p>
           </motion.div>
         </div>
       </div>
 
-      {/* scroll indicator */}
+      {/* Scroll Indicator */}
       <motion.a
         href="#projects"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-400 hover:text-white"
