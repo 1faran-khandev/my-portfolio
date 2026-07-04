@@ -17,8 +17,10 @@ export default function Navbar() {
 
       links.forEach((link) => {
         const section = document.getElementById(link.toLowerCase());
+
         if (section) {
           const rect = section.getBoundingClientRect();
+
           if (rect.top <= middle && rect.bottom >= middle) {
             setActiveLink(link);
           }
@@ -34,15 +36,18 @@ export default function Navbar() {
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id.toLowerCase());
+
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView({
+        behavior: "smooth",
+      });
+
       setMenuOpen(false);
     }
   };
 
   return (
     <>
-      {/* NAVBAR */}
       <motion.nav
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -54,76 +59,91 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-
           {/* Logo */}
-          <h1
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-xl font-semibold text-white cursor-pointer tracking-tight"
-          >
-            Faran<span className="text-blue-400">.dev</span>
-          </h1>
-
-          {/* Desktop Links */}
-          <ul className="hidden md:flex items-center gap-8 text-sm text-gray-300">
-            {links.map((link) => {
-              const isActive = activeLink === link;
-
-              return (
-                <li key={link}>
-                  <button
-                    onClick={() => scrollToSection(link)}
-                    className={`relative transition ${
-                      isActive ? "text-white" : "hover:text-white"
-                    }`}
-                  >
-                    {link}
-
-                    {/* underline */}
-                    <span
-                      className={`absolute left-0 -bottom-1 h-[2px] w-full transition-all duration-300 ${
-                        isActive
-                          ? "bg-blue-400"
-                          : "bg-transparent group-hover:bg-blue-400"
-                      }`}
-                    />
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-
-          {/* Mobile button */}
           <button
-            className="md:hidden text-white"
+            onClick={() =>
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              })
+            }
+            className="text-xl font-bold tracking-tight text-white"
+          >
+            Faran <span className="text-blue-400">Khan</span>
+          </button>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            <ul className="flex items-center gap-8 text-sm text-gray-300">
+              {links.map((link) => {
+                const active = activeLink === link;
+
+                return (
+                  <li key={link}>
+                    <button
+                      onClick={() => scrollToSection(link)}
+                      className={`relative pb-1 transition-colors duration-200 ${
+                        active
+                          ? "text-white"
+                          : "text-gray-300 hover:text-white"
+                      }`}
+                    >
+                      {link}
+
+                      <span
+                        className={`absolute left-0 bottom-0 h-[2px] transition-all duration-300 ${
+                          active
+                            ? "w-full bg-blue-400"
+                            : "w-0 bg-blue-400 group-hover:w-full"
+                        }`}
+                      />
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+
+            <a
+              href="/Muhammad_Faran_Ullah_Khan_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg bg-blue-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-600"
+            >
+              Resume
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
             onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden text-white"
           >
             {menuOpen ? (
-              <XMarkIcon className="w-6 h-6" />
+              <XMarkIcon className="h-6 w-6" />
             ) : (
-              <Bars3Icon className="w-6 h-6" />
+              <Bars3Icon className="h-6 w-6" />
             )}
           </button>
         </div>
       </motion.nav>
 
-      {/* MOBILE MENU */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center gap-10 text-lg"
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-black/90 backdrop-blur-xl"
           >
             {links.map((link) => (
-              <motion.button
+              <button
                 key={link}
                 onClick={() => scrollToSection(link)}
-                whileHover={{ scale: 1.1 }}
-                className="text-gray-300 hover:text-white transition"
+                className="text-xl text-gray-300 transition hover:text-white"
               >
                 {link}
-              </motion.button>
+              </button>
             ))}
           </motion.div>
         )}
