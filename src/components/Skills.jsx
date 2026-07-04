@@ -56,11 +56,10 @@ const Skills = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold">
-            Skills &{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-              Tech Stack
-            </span>
-          </h2>
+  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+    Tech Stack
+  </span>
+</h2>
 
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm md:text-base">
             Technologies I use to build responsive, scalable, and modern web
