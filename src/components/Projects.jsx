@@ -4,9 +4,10 @@ import { FaGithub } from "react-icons/fa";
 
 const projects = [
   {
-    title: "Hoodify – Hoodie eCommerce",
+    title: "Hoodify – E-commerce Application",
     description:
-      "Modern eCommerce UI built with React + Tailwind. Focused on clean UX, cart flow, and responsive design.",
+      "Built a responsive e-commerce application using React and Tailwind CSS with reusable UI components, shopping cart functionality, and client-side state management.",
+    technologies: ["React", "Tailwind CSS", "JavaScript"],
     link: "https://hoodify-eight.vercel.app/",
     github: "https://github.com/1faran-khandev/hoodify",
     image: "/images/hoodify.png",
@@ -14,7 +15,8 @@ const projects = [
   {
     title: "BrickSpace – Real Estate Platform",
     description:
-      "Real estate listing UI with filtering system and responsive property browsing experience.",
+      "Developed a responsive real estate application with property search, filtering, reusable React components, and optimized layouts for desktop and mobile devices.",
+    technologies: ["React", "Tailwind CSS", "Framer Motion"],
     link: "https://brickspace-real-estate.vercel.app/",
     github: "https://github.com/1faran-khandev/brickspace-real-estate",
     image: "/images/brickspace.png",
@@ -22,7 +24,8 @@ const projects = [
   {
     title: "Crypto Dashboard",
     description:
-      "Live crypto tracking dashboard with real-time data UI and clean analytics layout.",
+      "Created a cryptocurrency dashboard using React and REST APIs to display real-time market data with interactive charts and efficient data rendering.",
+    technologies: ["React", "REST API", "Recharts"],
     link: "https://crypto-dashboard-green-seven.vercel.app/",
     github: "https://github.com/1faran-khandev/crypto-dashboard",
     image: "/images/crypto-dashboard.png",
@@ -30,7 +33,8 @@ const projects = [
   {
     title: "AI Prompt Tool",
     description:
-      "AI-powered prompt generator built with React + API integration for better AI outputs.",
+      "Built an AI-powered web application that integrates external AI APIs to generate prompts with asynchronous data fetching, error handling, and a responsive user interface.",
+    technologies: ["React", "REST API", "AI API"],
     link: "https://ai-prompt-tool-bay.vercel.app/",
     github: "https://github.com/1faran-khandev/ai-prompt-tool",
     image: "/images/prompt-tool.png",
@@ -41,25 +45,34 @@ const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 },
+    transition: {
+      staggerChildren: 0.15,
+    },
   },
 };
 
 const card = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: {
+    opacity: 0,
+    y: 25,
+  },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5 },
+    transition: {
+      duration: 0.5,
+    },
   },
 };
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-28 bg-[#0a0a0a] text-white">
+    <section
+      id="projects"
+      className="py-28 bg-[#0a0a0a] text-white"
+    >
       <div className="max-w-6xl mx-auto px-6">
-
-        {/* Header */}
+        {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold">
             Featured{" "}
@@ -68,12 +81,14 @@ const Projects = () => {
             </span>
           </h2>
 
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm md:text-base">
-            A selection of projects focused on UI design, performance, and real-world usability.
+          <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
+            A selection of projects demonstrating experience with React,
+            TypeScript, REST APIs, responsive web development, and AI
+            integration.
           </p>
         </div>
 
-        {/* Grid */}
+        {/* Projects Grid */}
         <motion.div
           className="grid gap-10 sm:grid-cols-2"
           variants={container}
@@ -85,51 +100,59 @@ const Projects = () => {
             <motion.div
               key={index}
               variants={card}
-              className="group rounded-2xl overflow-hidden border border-gray-800 bg-white/5 hover:bg-white/10 transition"
+              className="group overflow-hidden rounded-2xl border border-gray-800 bg-white/5 hover:bg-white/10 transition-all duration-300"
             >
               {/* Image */}
               <div className="h-52 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl font-semibold">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+                <p className="mt-3 text-gray-400 text-sm leading-relaxed">
                   {project.description}
                 </p>
 
-                {/* Actions */}
-                <div className="flex items-center gap-3 mt-6">
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 text-sm rounded-lg bg-white text-black font-medium hover:bg-gray-200 transition"
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mt-5">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20"
                     >
-                      Live Demo
-                    </a>
-                  )}
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 text-sm rounded-lg border border-gray-700 text-gray-300 hover:border-white hover:text-white transition"
-                    >
-                      <FaGithub />
-                      Code
-                    </a>
-                  )}
+                {/* Buttons */}
+                <div className="flex items-center gap-3 mt-6">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-lg bg-white text-black text-sm font-medium hover:bg-gray-200 transition"
+                  >
+                    View Project
+                  </a>
+
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-700 text-gray-300 hover:border-white hover:text-white transition"
+                  >
+                    <FaGithub />
+                    GitHub
+                  </a>
                 </div>
               </div>
             </motion.div>
