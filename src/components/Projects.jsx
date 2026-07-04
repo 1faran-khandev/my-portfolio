@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Hoodify – E-commerce Application",
     description:
-      "Built a responsive e-commerce application using React and Tailwind CSS with reusable UI components, shopping cart functionality, and client-side state management.",
+      "Responsive e-commerce application built with React and Tailwind CSS featuring reusable components, shopping cart functionality, and a mobile-first design.",
     technologies: ["React", "Tailwind CSS", "JavaScript"],
     link: "https://hoodify-eight.vercel.app/",
     github: "https://github.com/1faran-khandev/hoodify",
@@ -15,7 +15,7 @@ const projects = [
   {
     title: "BrickSpace – Real Estate Platform",
     description:
-      "Developed a responsive real estate application with property search, filtering, reusable React components, and optimized layouts for desktop and mobile devices.",
+      "Real estate platform with property search, filtering, responsive layouts, and smooth user interactions built using React and Framer Motion.",
     technologies: ["React", "Tailwind CSS", "Framer Motion"],
     link: "https://brickspace-real-estate.vercel.app/",
     github: "https://github.com/1faran-khandev/brickspace-real-estate",
@@ -24,7 +24,7 @@ const projects = [
   {
     title: "Crypto Dashboard",
     description:
-      "Created a cryptocurrency dashboard using React and REST APIs to display real-time market data with interactive charts and efficient data rendering.",
+      "Dashboard displaying real-time cryptocurrency market data through REST APIs with interactive charts and optimized client-side rendering.",
     technologies: ["React", "REST API", "Recharts"],
     link: "https://crypto-dashboard-green-seven.vercel.app/",
     github: "https://github.com/1faran-khandev/crypto-dashboard",
@@ -33,8 +33,8 @@ const projects = [
   {
     title: "AI Prompt Tool",
     description:
-      "Built an AI-powered web application that integrates external AI APIs to generate prompts with asynchronous data fetching, error handling, and a responsive user interface.",
-    technologies: ["React", "REST API", "AI API"],
+      "AI-powered application that integrates external APIs to generate prompts with asynchronous data fetching, error handling, and a responsive interface.",
+    technologies: ["React", "REST API", "AI Integration"],
     link: "https://ai-prompt-tool-bay.vercel.app/",
     github: "https://github.com/1faran-khandev/ai-prompt-tool",
     image: "/images/prompt-tool.png",
@@ -67,10 +67,7 @@ const card = {
 
 const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="py-28 bg-[#0a0a0a] text-white"
-    >
+    <section id="projects" className="py-28 bg-[#0a0a0a] text-white">
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-16">
@@ -82,9 +79,9 @@ const Projects = () => {
           </h2>
 
           <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
-            A selection of projects demonstrating experience with React,
-            TypeScript, REST APIs, responsive web development, and AI
-            integration.
+            A selection of projects focused on responsive web applications,
+            REST API integration, reusable UI components, and modern frontend
+            development.
           </p>
         </div>
 
@@ -102,7 +99,7 @@ const Projects = () => {
               variants={card}
               className="group overflow-hidden rounded-2xl border border-gray-800 bg-white/5 hover:bg-white/10 transition-all duration-300"
             >
-              {/* Image */}
+              {/* Project Image */}
               <div className="h-52 overflow-hidden">
                 <img
                   src={project.image}
@@ -113,7 +110,7 @@ const Projects = () => {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold">
+                <h3 className="text-xl font-semibold text-white">
                   {project.title}
                 </h3>
 
@@ -133,7 +130,7 @@ const Projects = () => {
                   ))}
                 </div>
 
-                {/* Buttons */}
+                {/* Actions */}
                 <div className="flex items-center gap-3 mt-6">
                   <a
                     href={project.link}
@@ -141,7 +138,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="px-4 py-2 rounded-lg bg-white text-black text-sm font-medium hover:bg-gray-200 transition"
                   >
-                    View Project
+                    Live Demo
                   </a>
 
                   <a
