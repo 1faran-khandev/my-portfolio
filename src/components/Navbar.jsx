@@ -102,15 +102,6 @@ export default function Navbar() {
                 );
               })}
             </ul>
-
-            <a
-              href="/Muhammad_Faran_Ullah_Khan_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg bg-blue-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-600"
-            >
-              Resume
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
