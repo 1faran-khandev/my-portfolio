@@ -65,25 +65,17 @@ const About = () => {
               <span className="text-white font-semibold">
                 Muhammad Faran Ullah Khan
               </span>
-              , a software developer specializing in React, Next.js,
-              TypeScript, JavaScript, and Tailwind CSS. I enjoy building
-              responsive, accessible, and high-performance web applications with
-              clean, maintainable code.
+              , a software developer specializing in React, Next.js, TypeScript, JavaScript, and Tailwind CSS. 
+              I enjoy building responsive, accessible, and high-performance web applications with clean, maintainable code.
             </p>
 
             <p className="mt-4 text-gray-400 leading-relaxed">
-              I've built projects including AI-powered applications,
-              e-commerce platforms, dashboards, and real estate websites.
-              My experience includes integrating REST APIs, managing application
-              state, creating reusable UI components, and delivering consistent
-              user experiences across desktop and mobile devices.
+              I've built AI-powered applications, e-commerce platforms, dashboards, 
+              and real estate websites while working with REST APIs, reusable UI components, and modern frontend technologies.
             </p>
 
             <p className="mt-4 text-gray-400 leading-relaxed">
-              In addition to frontend development, I have experience with
-              Python, Node.js, Express.js, and REST APIs. I'm interested in AI
-              integration, scalable web applications, and continuously improving
-              my skills by building practical, real-world software projects.
+              I'm currently expanding my skills in Python, Node.js, and AI integration as I continue building practical, real-world software projects.
             </p>
           </motion.div>
         </div>
